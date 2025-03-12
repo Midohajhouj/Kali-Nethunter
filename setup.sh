@@ -28,21 +28,20 @@ log() {
 
 banner() {
     clear
-    printf "\e[1;32m#############################################\e[0m\n"
-    printf "\e[1;32m#                                           #\e[0m\n"
-    printf "\e[1;35m#    \e[1;34mWelcome to Kali Linux NetHunter Tool\e[0m    #\e[0m\n"
-    printf "\e[1;35m#       \e[1;33mMinimal and Powerful Solution\e[0m       #\e[0m\n"
-    printf "\e[1;37m#               Coded by LIONMAD                         #\e[0m\n"
-    printf "\e[1;32m#                                           #\e[0m\n"
-    printf "\e[1;32m#############################################\e[0m\n"
+    printf "${blue}##################################################\n"
+    printf "${blue}##                                              ##\n"
+    printf "${blue}##  88      a8P         db        88        88  ##\n"
+    printf "${blue}##  88    .88'         d88b       88        88  ##\n"
+    printf "${blue}##  88   88'          d8''8b      88        88  ##\n"
+    printf "${blue}##  88 d88           d8'  '8b     88        88  ##\n"
+    printf "${blue}##  8888'88.        d8YaaaaY8b    88        88  ##\n"
+    printf "${blue}##  88P   Y8b      d8''''''''8b   88        88  ##\n"
+    printf "${blue}##  88     '88.   d8'        '8b  88        88  ##\n"
+    printf "${blue}##  88       Y8b d8'          '8b 888888888 88  ##\n"
+    printf "${blue}##        Minimal and Powerful Solution         ##\n"
+    printf "${blue}############## Coded by LIONMAD ##################${reset}\n\n"
+    printf "\e[1;32m### Let's get started the installation! ###\e[0m\n"
     printf "\n"
-    printf "\e[1;33m[+] This tool is designed to enhance your Kali Linux experience!\e[0m\n"
-    printf "\e[1;33m[+] Packed with all the essentials for network auditing and penetration testing.\e[0m\n"
-    printf "\e[1;33m[+] Ready for immediate deployment in any auditing environment.\e[0m\n"
-    printf "\n"
-    printf "\e[1;32m### Let's get started with the installation! ###\e[0m\n"
-    printf "\n"
-    printf "\e[1;36mFor assistance, please refer to the documentation.\e[0m\n"
 }
 
 package() {
