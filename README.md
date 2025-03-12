@@ -60,16 +60,7 @@ After the installation is complete, you can start using Kali Linux NetHunter on 
     sudo tools.sh
     ```
  ---
-    
-## ❓ Troubleshooting
 
-- **VNC Connection Issues**: Ensure the VNC server is running and verify the connection port (default: `localhost:1`).
-- **Sound Issues**: The `sound` function in `setup.sh` resolves common audio problems. Ensure PulseAudio is running.
-- **Storage Issues**: If storage access fails, verify Termux has the required permissions:
-  ```bash
-  termux-setup-storage
-  ```
----
 
 ## 🤝 Contributing
 
