@@ -132,5 +132,4 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
-Enjoy your Kali Linux NetHunter experience on Termux!  
-For issues or suggestions, [open an issue](https://github.com/your-repo/kali-nethunter-termux/issues).
+### **<p align="center"> Coded by <a href="https://github.com/Midohajhouj">LIONMAD</a> </p>**
