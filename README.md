@@ -1,17 +1,14 @@
-# <p align="center">Kali Linux NetHunter for Termux</p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-Termux-a80505?style=flat-square">
-  <img src="https://img.shields.io/badge/License-MIT-a80505?style=flat-square">
-  <img src="https://img.shields.io/badge/Open%20Source-Yes-a80505?style=flat-square">
-  <img src="https://img.shields.io/github/repo-size/Midohajhouj/Kali-Nethunter?label=Size&color=a80505">
-  <img src="https://img.shields.io/github/stars/Midohajhouj/Kali-Nethunter?style=flat&label=Stars&color=a80505">
-  <img src="https://img.shields.io/github/languages/top/Midohajhouj/Kali-Nethunter?color=a80505">
-</p>
+# Kali Linux NetHunter for Termux
 
-<p align="center">
+![Platform: Termux](https://img.shields.io/badge/Platform-Termux-a80505?style=flat-square&logo=termux)
+![License: MIT](https://img.shields.io/badge/License-MIT-a80505?style=flat-square&logo=open-source)
+![Open Source: Yes](https://img.shields.io/badge/Open%20Source-Yes-a80505?style=flat-square&logo=github)
+![Repo Size](https://img.shields.io/github/repo-size/Midohajhouj/Kali-Nethunter?label=Size&color=a80505)
+![Stars](https://img.shields.io/github/stars/Midohajhouj/Kali-Nethunter?style=flat&label=Stars&color=a80505)
+![Languages](https://img.shields.io/github/languages/top/Midohajhouj/Kali-Nethunter?color=a80505)
+
 Transform your Android device into a powerful penetration testing environment with Kali Linux NetHunter for Termux. This project offers both CLI and GUI setups, optimized for mobile devices with VNC support.
-</p>
 
 ---
 
@@ -37,13 +34,13 @@ Transform your Android device into a powerful penetration testing environment wi
 
 ## 🚀 Installation
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 ```bash
-git clone https://github.com/your-repo/kali-nethunter-termux.git
-cd kali-nethunter-termux
+git clone https://github.com/Midohajhouj/Kali-Nethunter.git
+cd Kali-Nethunter
 ```
 
-### 2️⃣ Run the Setup Script
+### Run the Setup Script
 ```bash
 bash setup.sh
 ```
@@ -54,7 +51,17 @@ During installation, select one of the following options:
 
 **My Option**: Minimal (2 GB). We will expand this later during installation to ~6 GB by adding only necessary tools.
 
-### 3️⃣ Start the GUI
+### ⚒️ Tools Installation
+
+Install additional penetration testing tools using the `tools.sh` script.
+
+```bash
+chmod +x tools.sh
+sudo ./tools.sh
+```
+This prompts you to choose tools by category.
+
+### Start the GUI
 ```bash
 bash gui.sh
 ```
@@ -92,24 +99,6 @@ Follow the on-screen instructions to connect via a VNC viewer.
 
 ---
 
-## ⚒️ Tools Installation
-
-Install additional penetration testing tools using the `tools.sh` script.
-
-### Interactive Mode
-```bash
-bash tools.sh --interactive
-```
-This prompts you to choose tools by category.
-
-### Non-Interactive Mode
-```bash
-bash tools.sh
-```
-This installs all available tools by default.
-
----
-
 ## ❓ Troubleshooting
 
 - **VNC Connection Issues**: Ensure the VNC server is running and verify the connection port (default: `localhost:1`).
@@ -142,7 +131,5 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
-<p align="center">
-  Enjoy your Kali Linux NetHunter experience on Termux!  
-  For issues or suggestions, <a href="https://github.com/your-repo/kali-nethunter-termux/issues">open an issue</a>.
-</p>
+Enjoy your Kali Linux NetHunter experience on Termux!  
+For issues or suggestions, [open an issue](https://github.com/your-repo/kali-nethunter-termux/issues).
