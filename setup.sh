@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# Define color codes
 R="$(printf '\033[1;31m')"
 G="$(printf '\033[1;32m')"
 Y="$(printf '\033[1;33m')"
 B="$(printf '\033[1;34m')"
 C="$(printf '\033[1;36m')"
 W="$(printf '\033[1;37m')"
-NC="$(printf '\033[0m')"  # Reset color
 
 CURR_DIR=$(realpath "$(dirname "$BASH_SOURCE")")
 KALI_HOME="/data/data/com.termux/files/home/kali-arm64/home/kali"
@@ -20,7 +18,7 @@ log() {
     
     if [ ! -d "$LOG_DIR" ]; then
         mkdir -p "$LOG_DIR" || {
-            echo -e "${R}Failed to create log directory: $LOG_DIR${NC}" >&2
+            echo "Failed to create log directory: $LOG_DIR" >&2
             exit 1
         }
     fi
@@ -28,36 +26,28 @@ log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
 }
 
-# Banner function
 banner() {
     clear
-    printf "${B}##################################################\n"
-    printf "${B}##                                              ##\n"
-    printf "${B}##  88      a8P         db        88        88  ##\n"
-    printf "${B}##  88    .88'         d88b       88        88  ##\n"
-    printf "${B}##  88   88'          d8''8b      88        88  ##\n"
-    printf "${B}##  88 d88           d8'  '8b     88        88  ##\n"
-    printf "${B}##  8888'88.        d8YaaaaY8b    88        88  ##\n"
-    printf "${B}##  88P   Y8b      d8''''''''8b   88        88  ##\n"
-    printf "${B}##  88     '88.   d8'        '8b  88        88  ##\n"
-    printf "${B}##  88       Y8b d8'          '8b 888888888 88  ##\n"
-    printf "${B}##        Minimal and Powerful Solution         ##\n"
-    printf "${B}############## Coded by LIONMAD ##################${NC}\n\n"
-    printf "\e[1;32m### Let's get started with the installation! ###\e[0m\n"
+    printf "${R}    _  __     _ _   _       _   _               ${W}\n"
+    printf "${R}   | |/ /    | | | (_)     | | | |              ${W}\n"
+    printf "${R}   | ' / __ _| | |_ _ _ __ | | | |_ ___  _ __   ${W}\n"
+    printf "${R}   |  < / _\` | | __| | '_ \| | | __/ _ \| '_ \  ${W}\n"
+    printf "${R}   | . \ (_| | | |_| | | | | |_| || (_) | | | | ${W}\n"
+    printf "${R}   |_|\_\__,_|_|\__|_|_| |_|\____/\___/|_| |_| ${W}\n"
+    printf "\n"
+    printf "     ${G}Kali Linux NetHunter for Termux${W}\n"
+    printf "     ${C}Minimal Installation${W}\n"
     printf "\n"
 }
 
-# Package update and installation
 package() {
+    banner
     log "Updating and upgrading packages..."
     echo -e "${R} [${W}-${R}]${C} Updating and upgrading packages...${W}"
     
     # Update and upgrade packages
-    pkg update -y && pkg upgrade -y || {
-        log "Failed to update or upgrade packages."
-        echo -e "${R} [${W}-${R}]${G} Failed to update or upgrade packages.${W}"
-        exit 1
-    }
+    yes | pkg update
+    yes | pkg upgrade
 
     log "Installing required dependencies..."
     echo -e "${R} [${W}-${R}]${C} Installing required dependencies...${W}"
@@ -75,11 +65,7 @@ package() {
     if [ ! -d '/data/data/com.termux/files/home/storage' ]; then
         log "Setting up storage..."
         echo -e "${R} [${W}-${R}]${C} Setting up Storage...${W}"
-        termux-setup-storage || {
-            log "Failed to set up storage."
-            echo -e "${R} [${W}-${R}]${G} Failed to set up storage.${W}"
-            exit 1
-        }
+        termux-setup-storage
     fi
 }
 
@@ -96,12 +82,14 @@ install_nethunter() {
     chmod +x install-nethunter-termux
 
     # Run the NetHunter installation script with minimal option
-    ./install-nethunter-termux || {
-        echo -e "\n${R} [${W}-${R}]${G} Error installing Kali Linux NetHunter!${W}"
-        exit 1
-    }
+    ./install-nethunter-termux
 
-    echo -e "\n${R} [${W}-${R}]${G} Kali Linux NetHunter installed successfully!${W}"
+    if [[ $? -eq 0 ]]; then
+        echo -e "\n${R} [${W}-${R}]${G} Kali Linux NetHunter installed successfully!${W}"
+    else
+        echo -e "\n${R} [${W}-${R}]${G} Error installing Kali Linux NetHunter !${W}"
+        exit 1
+    fi
 }
 
 sound() {
@@ -129,11 +117,8 @@ permission() {
     if [[ -d "$CURR_DIR/assets" ]] && [[ -e "$CURR_DIR/assets/tools.sh" ]]; then
         cp -f "$CURR_DIR/assets/tools.sh" "$KALI_HOME/tools.sh"
     else
-        if ! wget -O "$CURR_DIR/tools.sh" "https://raw.githubusercontent.com/kali-nethunter/kali-nethunter/master/assets/tools.sh"; then
-            echo -e "\n${R} [${W}-${R}]${G} Failed to download tools.sh!${W}"
-            exit 1
-        fi
-        cp -f "$CURR_DIR/tools.sh" "$KALI_HOME/tools.sh"
+        downloader "$CURR_DIR/user.sh" "https://raw.githubusercontent.com/kali-nethunter/kali-nethunter/master/assets/tools.sh"
+        mv -f "$CURR_DIR/tools.sh" "$KALI_HOME/tools.sh"
     fi
     chmod +x "$KALI_HOME/tools.sh"
 
@@ -141,10 +126,7 @@ permission() {
     if [[ -d "$CURR_DIR/assets" ]] && [[ -e "$CURR_DIR/assets/gui.sh" ]]; then
         cp -f "$CURR_DIR/assets/gui.sh" "$KALI_HOME/gui.sh"
     else
-        if ! wget -O "$CURR_DIR/gui.sh" "https://raw.githubusercontent.com/kali-nethunter/kali-nethunter/master/assets/gui.sh"; then
-            echo -e "\n${R} [${W}-${R}]${G} Failed to download gui.sh!${W}"
-            exit 1
-        fi
+        downloader "$CURR_DIR/gui.sh" "https://raw.githubusercontent.com/kali-nethunter/kali-nethunter/master/assets/gui.sh"
         cp -f "$CURR_DIR/gui.sh" "$KALI_HOME/gui.sh"
     fi
     chmod +x "$KALI_HOME/gui.sh"
@@ -161,9 +143,8 @@ permission() {
             ${R} [${W}-${R}]${G} Kali Linux NetHunter (CLI) is now Installed on your Termux
             ${R} [${W}-${R}]${G} Restart your Termux to Prevent Some Issues.
             ${R} [${W}-${R}]${G} Type ${C}nh${G} to run Kali CLI.
-            ${R} [${W}-${R}]${G} Run ${C}sudo bash tools.sh to add additional tools 
             ${R} [${W}-${R}]${G} If you Want to Use Kali in GUI MODE then ,
-            ${R} [${W}-${R}]${G} Run ${C}nh${G} first & then type ${C}sudo bash gui.sh${W}
+            ${R} [${W}-${R}]${G} Run ${C}kali${G} first & then type ${C}bash gui.sh${W}
 EOF
         { echo; sleep 2; exit 0; }
     else
@@ -176,21 +157,15 @@ setup_vnc() {
     if [[ -d "$CURR_DIR/assets" ]] && [[ -e "$CURR_DIR/assets/vncstart" ]]; then
         cp -f "$CURR_DIR/assets/vncstart" "$KALI_HOME/vncstart"
     else
-        if ! wget -O "$CURR_DIR/vncstart" "https://raw.githubusercontent.com/kali-nethunter/kali-nethunter/master/assets/vncstart"; then
-            echo -e "\n${R} [${W}-${R}]${G} Failed to download vncstart!${W}"
-            exit 1
-        fi
-        cp -f "$CURR_DIR/vncstart" "$KALI_HOME/vncstart"
+        downloader "$CURR_DIR/vncstart" "https://raw.githubusercontent.com/kali-nethunter/kali-nethunter/master/assets/vncstart"
+        mv -f "$CURR_DIR/vncstart" "$KALI_HOME/vncstart"
     fi
 
     if [[ -d "$CURR_DIR/assets" ]] && [[ -e "$CURR_DIR/assets/vncstop" ]]; then
         cp -f "$CURR_DIR/assets/vncstop" "$KALI_HOME/vncstop"
     else
-        if ! wget -O "$CURR_DIR/vncstop" "https://raw.githubusercontent.com/kali-nethunter/kali-nethunter/master/assets/vncstop"; then
-            echo -e "\n${R} [${W}-${R}]${G} Failed to download vncstop!${W}"
-            exit 1
-        fi
-        cp -f "$CURR_DIR/vncstop" "$KALI_HOME/vncstop"
+        downloader "$CURR_DIR/vncstop" "https://raw.githubusercontent.com/kali-nethunter/kali-nethunter/master/assets/vncstop"
+        mv -f "$CURR_DIR/vncstop" "$KALI_HOME/vncstop"
     fi
     chmod +x "$KALI_HOME/vncstart"
     chmod +x "$KALI_HOME/vncstop"
