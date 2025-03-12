@@ -1,5 +1,5 @@
 
-# Kali Linux NetHunter for Termux
+<p align="center"> # Kali Linux NetHunter for Termux
 
 ![Platform: Termux](https://img.shields.io/badge/Platform-Termux-a80505?style=flat-square&logo=termux)
 ![License: MIT](https://img.shields.io/badge/License-MIT-a80505?style=flat-square&logo=open-source)
@@ -9,7 +9,7 @@
 ![Languages](https://img.shields.io/github/languages/top/Midohajhouj/Kali-Nethunter?color=a80505)
 
 Transform your Android device into a powerful penetration testing environment with Kali Linux NetHunter for Termux. This project offers both CLI and GUI setups, optimized for mobile devices with VNC support.
-
+</p>
 ---
 
 ## 🌟 Features
