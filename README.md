@@ -26,10 +26,6 @@ Transform your Android device into a powerful penetration testing environment wi
 ## 🛠 Prerequisites
 
 1. **Termux**: Install Termux from [F-Droid](https://f-droid.org) or a trusted source.
-2. **Storage Permissions**: Grant Termux storage access:
-   ```bash
-   termux-setup-storage
-   ```
 
 ---
 
