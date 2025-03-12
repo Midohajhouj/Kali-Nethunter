@@ -28,15 +28,19 @@ log() {
 
 banner() {
     clear
-    printf "${R}    _  __     _ _   _       _   _               ${W}\n"
-    printf "${R}   | |/ /    | | | (_)     | | | |              ${W}\n"
-    printf "${R}   | ' / __ _| | |_ _ _ __ | | | |_ ___  _ __   ${W}\n"
-    printf "${R}   |  < / _\` | | __| | '_ \| | | __/ _ \| '_ \  ${W}\n"
-    printf "${R}   | . \ (_| | | |_| | | | | |_| || (_) | | | | ${W}\n"
-    printf "${R}   |_|\_\__,_|_|\__|_|_| |_|\____/\___/|_| |_| ${W}\n"
-    printf "\n"
-    printf "     ${G}Kali Linux NetHunter for Termux${W}\n"
-    printf "     ${C}Minimal Installation${W}\n"
+    printf "${B}##################################################\n"
+    printf "${B}##                                              ##\n"
+    printf "${B}##  88      a8P         db        88        88  ##\n"
+    printf "${B}##  88    .88'         d88b       88        88  ##\n"
+    printf "${B}##  88   88'          d8''8b      88        88  ##\n"
+    printf "${B}##  88 d88           d8'  '8b     88        88  ##\n"
+    printf "${B}##  8888'88.        d8YaaaaY8b    88        88  ##\n"
+    printf "${B}##  88P   Y8b      d8''''''''8b   88        88  ##\n"
+    printf "${B}##  88     '88.   d8'        '8b  88        88  ##\n"
+    printf "${B}##  88       Y8b d8'          '8b 888888888 88  ##\n"
+    printf "${B}##        Minimal and Powerful Solution         ##\n"
+    printf "${B}############## Coded by LIONMAD ##################${NC}\n\n"
+    printf "\e[1;32m### Let's get started with the installation! ###\e[0m\n"
     printf "\n"
 }
 
