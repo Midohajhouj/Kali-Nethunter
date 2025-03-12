@@ -121,8 +121,8 @@ permission() {
             ${R} [${W}-${R}]${G} Kali Linux NetHunter (CLI) is now Installed on your Termux
             ${R} [${W}-${R}]${G} Restart your Termux to Prevent Some Issues.
             ${R} [${W}-${R}]${G} Type ${C}kali${G} to run Kali CLI.
-            ${R} [${W}-${R}]${G} If you Want to Use Kali in GUI MODE then ,
-            ${R} [${W}-${R}]${G} Run ${C}kali${G} first & then type ${C}bash gui.sh${W}
+            ${R} [${W}-${R}]${G} If you Want to Use Kali additional tools then ,
+            ${R} [${W}-${R}]${G} Run ${C}nh${G} first & then type ${C}sudo ./tools.sh${W}
 EOF
         { echo; sleep 2; exit 0; }
     else
