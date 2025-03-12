@@ -60,7 +60,8 @@ This prompts you to choose tools by category.
 
 ### Start the GUI
 ```bash
-bash gui.sh
+chmod +x gui.sh
+sudo ./gui.sh
 ```
 This script will:
 - Install XFCE4 desktop environment.
@@ -74,13 +75,13 @@ This script will:
 ### 🖥️ CLI Mode
 Access the Kali Linux CLI:
 ```bash
-kali
+nethunter or nh
 ```
 
 ### 📺 GUI Mode
 Start the graphical desktop environment:
 ```bash
-bash gui.sh
+sudo ./gui.sh
 ```
 Follow the on-screen instructions to connect via a VNC viewer.
 
