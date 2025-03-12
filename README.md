@@ -45,6 +45,8 @@ During installation, select one of the following options:
 
 **My Option**: Minimal (2 GB). We will expand this later during installation to ~6 GB by adding only necessary tools.
 
+If you encounter an error during installation, don't panic. Simply rerun the setup. Sometimes, a few weak or lightweight packages may cause the script to fail. 
+ 
 ---
 
 ## Usage
