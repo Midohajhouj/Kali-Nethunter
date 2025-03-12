@@ -1,9 +1,13 @@
 # <p align="center">Kali Linux NetHunter for Termux</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-Termux-blue?style=flat-square">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square">
+  <img src="https://img.shields.io/badge/Platform-Termux-red?style=flat-square">
+  <img src="https://img.shields.io/badge/License-MIT-red?style=flat-square">
   <img src="https://img.shields.io/badge/Kali-NetHunter-red?style=flat-square">
+  <img src="https://img.shields.io/badge/Open%20Source-Yes-red?style=flat-square">
+  <img src="https://img.shields.io/github/stars/Midohajhouj/Kali-Nethunter?style=flat&label=Stars&color=red">
+  <img src="https://img.shields.io/github/repo-size/Midohajhouj/Kali-Nethunter?label=Size&color=red">
+  <img src="https://img.shields.io/github/languages/top/Midohajhouj/Kali-Nethunter?color=red">
 </p>
 
 <p align="center">
