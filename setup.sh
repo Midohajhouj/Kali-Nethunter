@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Coded by : LIONMAD
 R="$(printf '\033[1;31m')"
 G="$(printf '\033[1;32m')"
 Y="$(printf '\033[1;33m')"
