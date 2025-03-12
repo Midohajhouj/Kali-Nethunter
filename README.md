@@ -13,23 +13,20 @@ Transform your Android device into a powerful penetration testing environment wi
 
 ---
 
-## 🌟 Features
+## Features
 
-- **Kali Linux NetHunter**: A robust Kali Linux environment designed for mobile devices.
-- **Graphical Desktop**: Includes XFCE4 desktop environment with VNC access.
-- **Flexible Installation Options**: Choose between Full (15 GB), Minimal (2 GB), or Nano (250 MB) versions.
-- **Custom Scripts**: Automated scripts for installation, configuration, and usage.
-- **VNC Support**: Seamlessly start and stop VNC servers for GUI access.
+- **Easy Installation**: Automates the installation process of Kali Linux NetHunter on Termux.
+- **Dependency Management**: Ensures all required dependencies are installed.
+- **Logging**: Logs all installation steps for troubleshooting.
+- **Environment Setup**: Configures the environment for seamless usage of Kali Linux NetHunter.
 
 ---
 
 ## 🛠 Prerequisites
 
 1. **Termux**: Install Termux from [F-Droid](https://f-droid.org) or a trusted source.
-
----
-
-## 🚀 Installation
+2. **Internet Connection**: A stable internet connection is required for downloading packages and scripts.
+# 🚀 Installation
 
 ### Clone the Repository
 ```bash
@@ -48,55 +45,22 @@ During installation, select one of the following options:
 
 **My Option**: Minimal (2 GB). We will expand this later during installation to ~6 GB by adding only necessary tools.
 
-### ⚒️ Tools Installation
-
-Install additional penetration testing tools using the `tools.sh` script.
-
-```bash
-chmod +x tools.sh
-sudo ./tools.sh
-```
-This prompts you to choose tools by category.
-
-### Start the GUI
-```bash
-chmod +x gui.sh
-sudo ./gui.sh
-```
-This script will:
-- Install XFCE4 desktop environment.
-- Configure and start the VNC server.
-- Provide VNC connection details.
-
 ---
 
-## 🎮 Usage
+## Usage
 
-### 🖥️ CLI Mode
-Access the Kali Linux CLI:
-```bash
-nethunter or nh
-```
+After the installation is complete, you can start using Kali Linux NetHunter on Termux:
 
-### 📺 GUI Mode
-Start the graphical desktop environment:
-```bash
-sudo ./gui.sh
-```
-Follow the on-screen instructions to connect via a VNC viewer.
-
-### VNC Server Commands
-- **Start VNC Server**:
-  ```bash
-  bash vncstart.sh
-  ```
-- **Stop VNC Server**:
-  ```bash
-  bash vncstop.sh
-  ```
-
----
-
+- **Start Kali CLI**:
+  - Type `kali` or `nh` in Termux to start the Kali Linux CLI.
+  
+- **Install Additional Tools**:
+  - Use the `tools.sh` script to install additional tools:
+    ```bash
+    sudo tools.sh
+    ```
+ ---
+    
 ## ❓ Troubleshooting
 
 - **VNC Connection Issues**: Ensure the VNC server is running and verify the connection port (default: `localhost:1`).
@@ -105,7 +69,6 @@ Follow the on-screen instructions to connect via a VNC viewer.
   ```bash
   termux-setup-storage
   ```
-
 ---
 
 ## 🤝 Contributing
