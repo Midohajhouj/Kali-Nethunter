@@ -9,9 +9,7 @@
   <img src="https://img.shields.io/github/languages/top/Midohajhouj/Kali-Nethunter?color=a80505">
 </p>
 
-<p align="center">
 Transform your Android device into a powerful penetration testing environment with Kali Linux NetHunter for Termux. This project offers both CLI and GUI setups, optimized for mobile devices with VNC support.
-</p>
 
 ---
 
