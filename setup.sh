@@ -1,11 +1,13 @@
 #!/bin/bash
 
+# Define color codes
 R="$(printf '\033[1;31m')"
 G="$(printf '\033[1;32m')"
 Y="$(printf '\033[1;33m')"
 B="$(printf '\033[1;34m')"
 C="$(printf '\033[1;36m')"
 W="$(printf '\033[1;37m')"
+NC="$(printf '\033[0m')"  # Reset color
 
 CURR_DIR=$(realpath "$(dirname "$BASH_SOURCE")")
 KALI_HOME="/data/data/com.termux/files/home/kali-arm64/home/kali"
@@ -25,23 +27,28 @@ log() {
     
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
 }
+
+# Banner function
 banner() {
     clear
-    printf "${blue}##################################################\n"
-    printf "${blue}##                                              ##\n"
-    printf "${blue}##  88      a8P         db        88        88  ##\n"
-    printf "${blue}##  88    .88'         d88b       88        88  ##\n"
-    printf "${blue}##  88   88'          d8''8b      88        88  ##\n"
-    printf "${blue}##  88 d88           d8'  '8b     88        88  ##\n"
-    printf "${blue}##  8888'88.        d8YaaaaY8b    88        88  ##\n"
-    printf "${blue}##  88P   Y8b      d8''''''''8b   88        88  ##\n"
-    printf "${blue}##  88     '88.   d8'        '8b  88        88  ##\n"
-    printf "${blue}##  88       Y8b d8'          '8b 888888888 88  ##\n"
-    printf "${blue}##        Minimal and Powerful Solution         ##\n"
-    printf "${blue}############## Coded by LIONMAD ##################${reset}\n\n"
-    printf "\e[1;32m### Let's get started the installation! ###\e[0m\n"
+    printf "${B}##################################################\n"
+    printf "${B}##                                              ##\n"
+    printf "${B}##  88      a8P         db        88        88  ##\n"
+    printf "${B}##  88    .88'         d88b       88        88  ##\n"
+    printf "${B}##  88   88'          d8''8b      88        88  ##\n"
+    printf "${B}##  88 d88           d8'  '8b     88        88  ##\n"
+    printf "${B}##  8888'88.        d8YaaaaY8b    88        88  ##\n"
+    printf "${B}##  88P   Y8b      d8''''''''8b   88        88  ##\n"
+    printf "${B}##  88     '88.   d8'        '8b  88        88  ##\n"
+    printf "${B}##  88       Y8b d8'          '8b 888888888 88  ##\n"
+    printf "${B}##        Minimal and Powerful Solution         ##\n"
+    printf "${B}############## Coded by LIONMAD ##################${NC}\n\n"
+    printf "\e[1;32m### Let's get started with the installation! ###\e[0m\n"
     printf "\n"
 }
+
+# Package update and installation
+package() {
     log "Updating and upgrading packages..."
     echo -e "${R} [${W}-${R}]${C} Updating and upgrading packages...${W}"
     
