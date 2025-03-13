@@ -36,6 +36,7 @@ cd Kali-Nethunter
 
 ### Run the Setup Script
 ```bash
+chmod +x *
 bash setup.sh
 ```
 During installation, select one of the following options:
