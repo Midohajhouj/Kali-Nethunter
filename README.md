@@ -55,7 +55,7 @@ If you encounter an error during installation, don't panic. Simply rerun the set
 After the installation is complete, you can start using Kali Linux NetHunter on Termux:
 
 - **Start Kali CLI**:
-  - Type `kali` or `nh` in Termux to start the Kali Linux CLI.
+  - Type `nethunter` or `nh` in Termux to start the Kali Linux CLI.
   
 - **Install Additional Tools**:
   - Use the `tools.sh` script to install additional tools:
