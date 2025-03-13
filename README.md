@@ -44,7 +44,7 @@ During installation, select one of the following options:
 - **Minimal (2 GB)**: Lightweight version and we will customize it (Best option).  
 - **Nano (250 MB)**: Bare minimum for low-storage devices.
 
-**My Option**: Minimal (2 GB). We will expand this later during installation to ~6 GB by adding only necessary tools.
+**My Option**: Minimal (2 GB). We will expand this later during installation to ~8 GB by adding only necessary tools.
 
 If you encounter an error during installation, don't panic. Simply rerun the setup. Sometimes, a few weak or lightweight packages may cause the script to fail. 
  
